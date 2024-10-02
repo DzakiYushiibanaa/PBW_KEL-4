@@ -31,4 +31,30 @@ Dalam era digital yang semakin berkembang, perpustakaan sebagai pusat informasi 
 
 Dengan memanfaatkan teknologi seperti Object-Oriented Programming (OOP), PHP Data Objects (PDO), dan arsitektur Model-View-Controller (MVC), pengembangan aplikasi perpustakaan digital ini bertujuan untuk menyediakan solusi manajemen yang efisien dan terstruktur. OOP memungkinkan pengembangan aplikasi yang modular dan mudah di-maintain dengan cara mengorganisir kode dalam bentuk objek yang merepresentasikan data serta fungsionalitas. Sementara itu, PDO menyediakan koneksi database yang aman, fleksibel, dan mendukung berbagai jenis database dengan fitur prepared statement yang meningkatkan keamanan terhadap serangan injeksi SQL. Arsitektur MVC digunakan untuk memisahkan logika bisnis dari tampilan, yang membuat aplikasi lebih mudah untuk dikembangkan, dipelihara, dan diuji.
 
+## Usecase
+![ERD](https://github.com/DzakiYushiibanaa/PBW_KEL-4/blob/0fdb4c55753bc3515614a19b01080ce2a141d174/Image%20PBW/Usecase.jpeg)
+### Aktor:
+- Pengguna: Mewakili pengguna biasa sistem perpustakaan
+- Admin: Mewakili administrator dengan hak akses lebih banyak
+
+### Manajemen Buku:
+- Tambah Buku (Hanya Admin)
+- Edit Buku (Hanya Admin)
+- Hapus Buku (Hanya Admin)
+- Cari Buku (Pengguna dan Admin)
+
+### Manajemen Pengguna:
+- Kelola Pengguna (Hanya Admin)
+
+### Manajemen Peminjaman:
+- Pinjam Buku (Pengguna dan Admin)
+- Cek Status Buku (Pengguna dan Admin)
+- Kembalikan Buku (Pengguna dan Admin)
+
+### Pelaporan:
+- Laporan Buku Terpopuler (Hanya Admin)
+- Laporan Buku Terlambat (Hanya Admin)
+- Laporan Total Peminjaman (Hanya Admin)
+
 ## ERD
+![ERD](https://github.com/DzakiYushiibanaa/PBW_KEL-4/blob/dafbf406cdc9ab5f0900dae16188d62efdb95874/Image%20PBW/ERD.jpeg)
