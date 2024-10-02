@@ -58,3 +58,75 @@ Dengan memanfaatkan teknologi seperti Object-Oriented Programming (OOP), PHP Dat
 
 ## ERD
 ![ERD](https://github.com/DzakiYushiibanaa/PBW_KEL-4/blob/dafbf406cdc9ab5f0900dae16188d62efdb95874/Image%20PBW/ERD.jpeg)
+### Entitas dan Atribut
+
+#### a. Buku
+Entitas Buku merepresentasikan koleksi buku yang tersedia dalam perpustakaan digital.
+#### Atribut:
+- id_buku (INT, PK): Identifier unik untuk setiap buku.
+- judul (VARCHAR): Judul buku.
+- penulis (VARCHAR): Nama penulis buku.
+- penerbit (VARCHAR): Penerbit buku.
+- tahun_terbit (INT): Tahun terbit buku.
+- status (ENUM): Status buku, yang dapat berupa 'tersedia' atau 'dipinjam'.
+
+#### b. User
+Entitas User menggambarkan pengguna sistem, baik itu admin maupun pengguna biasa.
+#### Atribut:
+- id_user (INT, PK): Identifier unik untuk setiap pengguna.
+- nama (VARCHAR): Nama pengguna.
+- email (VARCHAR): Alamat email pengguna.
+- password (VARCHAR): Kata sandi untuk autentikasi.
+- role (ENUM): Peran pengguna, yang dapat berupa 'admin' atau 'user'.
+
+#### c. Peminjaman
+Entitas Peminjaman mencatat transaksi peminjaman buku oleh pengguna.
+#### Atribut:
+- id_peminjaman (INT, PK): Identifier unik untuk setiap transaksi peminjaman.
+- tanggal_pinjam (DATE): Tanggal peminjaman buku.
+- tanggal_kembali (DATE): Tanggal pengembalian buku yang diharapkan.
+- status (ENUM): Status peminjaman, seperti 'dipinjam', 'dikembalikan', atau 'overdue'.
+  
+#### d. Detail Peminjaman
+Entitas Detail Peminjaman menghubungkan entitas Peminjaman dengan Buku, mencatat buku-buku yang dipinjam dalam setiap transaksi.
+#### Atribut:
+- id_detail (INT, PK): Identifier unik untuk setiap detail peminjaman.
+- id_peminjaman (INT, FK): Foreign Key yang merujuk ke id_peminjaman di entitas Peminjaman.
+- id_buku (INT, FK): Foreign Key yang merujuk ke id_buku di entitas Buku.
+
+#### e. Laporan
+Entitas Laporan menyimpan data terkait laporan yang dihasilkan oleh sistem, seperti laporan buku paling banyak dipinjam, buku yang overdue, dan total peminjaman.
+#### Atribut:
+- id_laporan (INT, PK): Identifier unik untuk setiap laporan.
+- jenis_laporan (ENUM): Jenis laporan, seperti 'buku terbanyak dipinjam', 'buku overdue', atau 'total peminjaman'.
+- tanggal_laporan (DATE): Tanggal laporan dibuat.
+- keterangan (VARCHAR): Deskripsi atau keterangan tambahan mengenai laporan.
+
+### Hubungan Antar Entitas
+#### a. User ke Peminjaman
+Jenis Hubungan: One-to-Many (Satu ke Banyak)
+#### Penjelasan:
+Satu User dapat melakukan banyak Peminjaman. Misalnya, seorang pengguna dapat meminjam beberapa buku dalam periode waktu yang berbeda.
+Setiap Peminjaman hanya dilakukan oleh satu User.
+
+#### b. Peminjaman ke Detail Peminjaman
+Jenis Hubungan: One-to-Many (Satu ke Banyak)
+#### Penjelasan:
+Satu Peminjaman dapat memiliki banyak Detail Peminjaman. Ini memungkinkan satu transaksi peminjaman untuk mencakup beberapa buku.
+Setiap Detail Peminjaman hanya terkait dengan satu Peminjaman.
+
+#### c. Detail Peminjaman ke Buku
+Jenis Hubungan: Many-to-One (Banyak ke Satu)
+#### Penjelasan:
+Banyak Detail Peminjaman dapat terkait dengan satu Buku. Hal ini memungkinkan buku yang sama untuk dipinjam oleh banyak pengguna pada waktu yang berbeda.
+Setiap Detail Peminjaman hanya terkait dengan satu Buku.
+
+#### d. Peminjaman ke Laporan
+Jenis Hubungan: One-to-Many (Satu ke Banyak)
+#### Penjelasan:
+Satu Peminjaman dapat menghasilkan banyak Laporan. Misalnya, satu peminjaman dapat berkontribusi pada berbagai laporan seperti buku overdue atau total peminjaman harian.
+Setiap Laporan terkait dengan satu Peminjaman.
+
+
+
+
