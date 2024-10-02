@@ -129,7 +129,7 @@ Setiap Laporan terkait dengan satu Peminjaman.
 
 
 ## Class Diagram
-![ERD](https://github.com/DzakiYushiibanaa/PBW_KEL-4/blob/6ea93a6b35a44a801baed0e4ef56174c5b4fac10/Image%20PBW/class%20diagram%20(perpusweb).png)
+![ClassDiagram](https://github.com/DzakiYushiibanaa/PBW_KEL-4/blob/6ea93a6b35a44a801baed0e4ef56174c5b4fac10/Image%20PBW/class%20diagram%20(perpusweb).png)
 #### Class diagram ini menggambarkan struktur kelas dan hubungan antar kelas dalam aplikasi manajemen perpustakaan digital. Diagram ini menggunakan pendekatan Object-Oriented Programming (OOP) dengan desain berbasis Model-View-Controller (MVC). Terdapat tiga kelas utama yang merepresentasikan entitas utama dalam sistem: Buku, Pengguna, dan Peminjaman. Berikut adalah penjelasan detail mengenai masing-masing kelas dan relasinya:
 #### 1. Kelas Buku
 #### Atribut:
@@ -179,5 +179,7 @@ Setiap Laporan terkait dengan satu Peminjaman.
 - Pengguna dan Peminjaman: Satu pengguna dapat melakukan banyak peminjaman, tetapi satu peminjaman hanya dilakukan oleh satu pengguna. Relasi ini direpresentasikan sebagai one-to-many (1 ke banyak).
 - Buku dan Peminjaman: Satu buku bisa dipinjam berkali-kali, namun setiap peminjaman hanya berhubungan dengan satu buku. Relasi ini juga digambarkan sebagai one-to-many (1 ke banyak).
 
+## Koneksi dengan PDO & Implementasi dengan MVC
+![PDO & VMC](https://github.com/DzakiYushiibanaa/PBW_KEL-4/blob/8e216b214a2b15cb4104476812c32603149726b1/Image%20PBW/implemen.png)
 
-
+## Testing
