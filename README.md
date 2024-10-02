@@ -180,9 +180,45 @@ Setiap Laporan terkait dengan satu Peminjaman.
 - Buku dan Peminjaman: Satu buku bisa dipinjam berkali-kali, namun setiap peminjaman hanya berhubungan dengan satu buku. Relasi ini juga digambarkan sebagai one-to-many (1 ke banyak).
 
 ## Koneksi dengan PDO & Implementasi dengan MVC
+![Screenshot 2024-10-02 194752](https://github.com/user-attachments/assets/1996a586-502d-40c0-9ad0-d9d5281f2f1b)
+#### implementasi PDO
+#### Penjelasan
+#### 1. Mendeklarasikan Variabel Koneksi:
+- Variabel $servername, $username, $password, dan $dbname didefinisikan untuk menyimpan informasi yang diperlukan untuk melakukan koneksi ke database MySQL.
+#### 2. Membuat Koneksi PDO:
+- new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);: Kode ini membuat objek PDO baru untuk terhubung ke database.
+"mysql:host=$servername;dbname=$dbname": Ini adalah string koneksi yang menunjukkan jenis database (MySQL) dan informasi koneksi (server dan nama database).
+- $username dan $password: Ini adalah kredensial untuk autentikasi ke database.
+#### 3. Menangani Error:
+- $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);: Ini menetapkan mode kesalahan PDO ke ERRMODE_EXCEPTION, yang berarti jika ada kesalahan saat mencoba terhubung ke database atau menjalankan query, PDO akan melemparkan pengecualian (exception) yang dapat ditangkap dan ditangani dalam blok catch.
+#### 4. Menggunakan Blok Try-Catch:
+- Kode menggunakan blok try untuk mencoba membuat koneksi. Jika ada kesalahan (misalnya, database tidak ditemukan, kredensial salah, dll.), pengecualian PDOException akan ditangkap oleh blok catch, dan pesan kesalahan akan ditampilkan.
+- echo "Connected successfully"; hanya untuk memberi tahu bahwa koneksi berhasil. Ini bisa dihapus dalam aplikasi produksi untuk meningkatkan keamanan.
+
 ![PDO & VMC](https://github.com/DzakiYushiibanaa/PBW_KEL-4/blob/8e216b214a2b15cb4104476812c32603149726b1/Image%20PBW/implemen.png)
+#### implementasi sederhana pola arsitektur Model-View-Controller (MVC) dalam PHP. Berikut penjelasan:
+- Folder "controllers": Berisi file-file controller yang menangani logika bisnis aplikasi. BookController.php kemungkinan mengelola operasi terkait buku, sementara UserController.php menangani operasi terkait pengguna.
+- Folder "models": Berisi file-file model yang merepresentasikan data dan logika aplikasi. Book.php, Borrow.php, dan User.php untuk menangani data dan operasi untuk buku, peminjaman, dan pengguna.
+- Folder "views": Berisi file-file tampilan yang menangani presentasi data ke pengguna. File-file seperti add_book_process.php, login_process.php, dll., untuk menangani tampilan dan proses untuk berbagai fitur aplikasi.
+
 
 ## Testing
+#### Tampilan Awal
+![Screenshot 2024-10-02 194412](https://github.com/user-attachments/assets/4b249e1c-5850-439f-ac35-cbf6cbf29716)
+Halaman ini berfungsi sebagai beranda dengan judul "Welcome to Library Management" dan menyediakan menu navigasi yang mengarahkan pengguna ke berbagai fungsi seperti menambah buku, melihat daftar buku, meminjam buku, dan mengembalikan buku.
+#### Tampilan Add Book
+![Screenshot 2024-10-02 194429](https://github.com/user-attachments/assets/2ae2288f-bfec-4b96-9346-c046e2f5ba2d)
+halaman untuk menambahkan buku dengan memasukkan Title, Author, Genre dan Year
+#### Tampilan Loan Book
+![Screenshot 2024-10-02 194619](https://github.com/user-attachments/assets/ab42ca81-8ae4-4ca6-93eb-f4d955e830cb)
+halaman untuk meminjam buku dengan menginput user id dan book id
+#### Tampilan Return Book
+![Screenshot 2024-10-02 194640](https://github.com/user-attachments/assets/10ef7773-8a1d-4597-a098-747a04481472)
+halaman untuk mengembalikan buku dengan memasukkan Loan ID
+#### Tampilan View Book
+![Screenshot 2024-10-02 194542](https://github.com/user-attachments/assets/0b772ae2-ad91-408b-92b8-0576ec88fbc6)
+halaman ini untuk menampilkan daftar buku yang tersimpan dalam database pada aplikasi Manajemen Perpustakaan. 
 
 
 ## Link Laporan (Google drive)
+https://drive.google.com/file/d/1m1gKDeLoXImH_LQiiM49c3Um9kn1KTEc/view?usp=sharing
