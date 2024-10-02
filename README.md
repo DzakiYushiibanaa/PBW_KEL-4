@@ -128,5 +128,56 @@ Satu Peminjaman dapat menghasilkan banyak Laporan. Misalnya, satu peminjaman dap
 Setiap Laporan terkait dengan satu Peminjaman.
 
 
+## Class Diagram
+![ERD](https://github.com/DzakiYushiibanaa/PBW_KEL-4/blob/6ea93a6b35a44a801baed0e4ef56174c5b4fac10/Image%20PBW/class%20diagram%20(perpusweb).png)
+#### Class diagram ini menggambarkan struktur kelas dan hubungan antar kelas dalam aplikasi manajemen perpustakaan digital. Diagram ini menggunakan pendekatan Object-Oriented Programming (OOP) dengan desain berbasis Model-View-Controller (MVC). Terdapat tiga kelas utama yang merepresentasikan entitas utama dalam sistem: Buku, Pengguna, dan Peminjaman. Berikut adalah penjelasan detail mengenai masing-masing kelas dan relasinya:
+#### 1. Kelas Buku
+#### Atribut:
+- id_buku: Nomor unik untuk identifikasi setiap buku.
+- judul: Judul buku.
+- penulis: Nama penulis buku.
+- penerbit: Nama penerbit buku.
+- tahun_terbit: Tahun terbit buku.
+- status: Status buku, seperti tersedia atau dipinjam.
+
+#### Metode:
+- tambahBuku(): Untuk menambahkan buku baru ke dalam koleksi.
+- editBuku(): Untuk mengedit informasi buku yang ada.
+- hapusBuku(): Untuk menghapus buku dari sistem.
+- cariBuku(): Untuk mencari buku berdasarkan kriteria tertentu.
+- Kelas Buku bertanggung jawab mengelola data dan operasi terkait koleksi buku di perpustakaan. Fitur-fitur seperti menambah, mengedit, menghapus, dan mencari buku dikelola oleh metode-metode dalam kelas ini.
+
+#### 2. Kelas Pengguna
+#### Atribut:
+- id_user: Nomor unik untuk identifikasi pengguna.
+- nama: Nama lengkap pengguna.
+- email: Alamat email pengguna.
+- password: Kata sandi pengguna untuk login.
+- role: Peran pengguna, bisa berupa "admin" atau "user" biasa.
+
+#### Metode:
+- tambahPengguna(): Untuk menambahkan pengguna baru.
+- editPengguna(): Untuk mengedit informasi pengguna.
+- hapusPengguna(): Untuk menghapus pengguna dari sistem.
+- Kelas Pengguna digunakan untuk mengelola data dan operasi yang terkait dengan pengguna aplikasi. Pengguna dapat memiliki peran sebagai admin, yang memiliki hak untuk mengelola data, atau sebagai user biasa yang dapat meminjam buku.
+
+#### 3. Kelas Peminjaman
+#### Atribut:
+- id_peminjaman: Nomor unik untuk identifikasi peminjaman.
+- id_buku: Nomor unik buku yang dipinjam.
+- id_user: Nomor unik pengguna yang meminjam buku.
+- tanggal_pinjam: Tanggal peminjaman buku.
+- tanggal_kembali: Tanggal pengembalian buku.
+- status: Status peminjaman (dipinjam/dikembalikan).
+
+#### Metode:
+- pinjamBuku(): Untuk memproses peminjaman buku.
+- kembalikanBuku(): Untuk memproses pengembalian buku.
+- cekStatusBuku(): Untuk mengecek status buku, apakah tersedia atau sedang dipinjam.
+- Kelas Peminjaman berfungsi untuk menangani alur proses peminjaman dan pengembalian buku. Selain itu, kelas ini juga dapat mengecek status buku apakah masih tersedia atau sedang dipinjam.
+- Relasi Antar Kelas
+- Pengguna dan Peminjaman: Satu pengguna dapat melakukan banyak peminjaman, tetapi satu peminjaman hanya dilakukan oleh satu pengguna. Relasi ini direpresentasikan sebagai one-to-many (1 ke banyak).
+- Buku dan Peminjaman: Satu buku bisa dipinjam berkali-kali, namun setiap peminjaman hanya berhubungan dengan satu buku. Relasi ini juga digambarkan sebagai one-to-many (1 ke banyak).
+
 
 
