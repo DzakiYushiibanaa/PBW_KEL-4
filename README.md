@@ -183,3 +183,6 @@ Setiap Laporan terkait dengan satu Peminjaman.
 ![PDO & VMC](https://github.com/DzakiYushiibanaa/PBW_KEL-4/blob/8e216b214a2b15cb4104476812c32603149726b1/Image%20PBW/implemen.png)
 
 ## Testing
+
+
+## Link Laporan (Google drive)
