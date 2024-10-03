@@ -1,0 +1,68 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Style for the body */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style for the header */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Style for the table */
+table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for table headers */
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style for table headers */
+table th {
+    background-color: #1abc9c;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Style for table rows */
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Style for action links */
+a {
+    color: #1abc9c;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+/* Hover effect for action links */
+a:hover {
+    color: #16a085;
+}
